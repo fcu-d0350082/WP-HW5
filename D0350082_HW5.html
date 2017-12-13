@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset = "utf-8">
+	<title>台中西屯區郵局和台灣中油地圖</title>
+		<style>
+			#map {
+				height: 700px;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>FCU Map</h3>
+		<div id="map"></div>
+	<script>
+		function initMap() {
+			var uluru = {lat: 24.1792372 , lng: 120.6497788};
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 14,
+				center: uluru,
+				mapTypeId: 'roadmap'<!-- roadmap 預設道路地圖檢視; satellite 地球衛星影像; hybrid 混合的一般檢視與衛星檢視; terrain 地形資訊顯示實體地圖-->
+			});
+			var icons = {
+				GAS: {
+				icon: './oil.png'
+				},
+				postoffice: {
+				icon: './post.png'
+				}
+			};
+			var features = [{
+				position: new google.maps.LatLng(24.171330, 120.643930),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區青海路二段211號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.162791, 120.650085),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區文心路三段2號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.205774, 120.629005),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區福雅路693號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.180124, 120.632491),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區福科路110號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.162462, 120.628171),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區環中路三段800號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.183085, 120.614594),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區台灣大道四段1047號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.192619, 120.623165),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區福雅路300號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.171490, 120.659822),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區文心路三段187號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.200716, 120.656976),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區環中路一段2490號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.202118, 120.654423),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區中清路三段150號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.201483, 120.670181),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區環中路一段1686號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.198321, 120.642653),
+				type: 'GAS',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區廣福路191號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.190479, 120.612213),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區永安里西屯路三段166之80號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.183959, 120.604837),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區台中港路三段160號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.183410, 120.618611),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區福順路318號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.179029, 120.601642),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區台灣大道四段1727號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.169474, 120.606564),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區工業區六路10號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.176689, 120.637651),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區黎明路三段130號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.175271, 120.649131),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區河南路2段268號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.164626, 120.654206),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區青海路一段83號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.156534, 120.652871),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>40759台中市西屯區大隆路60、62號</h3>' +
+								'</div>'
+				}, {
+				position: new google.maps.LatLng(24.178315, 120.646851),
+				type: 'postoffice',
+				contentString : '<div>' +
+								'<h3>407台中市西屯區文華路100號</h3>' +
+								'</div>'
+				}
+			];
+
+			features.forEach(function(feature){
+				var marker = new google.maps.Marker({
+					position: feature.position,
+					icon: icons[feature.type].icon,
+					map: map		
+				});
+				var infowindow = new google.maps.InfoWindow({
+					content: feature.contentString
+				});
+				marker.addListener('mouseover', function() {
+				infowindow.open(map, marker);
+				});
+			});
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAErjgN25I8BbhFDIVr1M2i0tWicMnJNqc&callback=initMap">
+	</script>
+	</body>
+</html>
